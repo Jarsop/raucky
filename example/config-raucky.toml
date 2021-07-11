@@ -1,0 +1,29 @@
+
+# raucky config file
+# Edit this file according your settings
+
+# Working paths, 'input' is the folder containing the RAUC manifest
+# image(s) and hooks, 'sign' the folder which will contains the
+# bundle signature and 'output', the folder which will contains
+# the intermediate bundle to sign and the final bundle.
+#
+# TO AVOID MISTAKES PATHS MUST BE ABSOLUTE
+#
+[path]
+input = "input"
+sign = "signature"
+output = "output"
+
+# Bundle settings, used to create the intermediate bundle to sign,
+# define the signature file and create the final bundle.
+[bundle]
+interm = "bundle.rauci"
+sig = "bundle.cms"
+name = "bundle.raucb"
+
+# Manifest settings, you must specify at least one image section.
+[manifest]
+name = "manifest.raucm"
+# Image section, used to check the bundle validity
+image = ["rootfs", "boot"]
+
